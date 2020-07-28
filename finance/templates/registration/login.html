@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block title %}Login{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm shadow p-3 mr-2 ml-2 bg-light rounded">
+            <h4 class="text-center text-secondary">Login</h4>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form|bootstrap }}
+                <button class="btn btn-secondary" type="submit">Login</button>
+            </form>
+        </div>
+        <div class="col-sm"></div>
+    </div>
+{% endblock %}
