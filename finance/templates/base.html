@@ -42,8 +42,8 @@
                             <i class="fas fa-comments-dollar mr-1"></i> Lançamentos
                         </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="{% url 'compra_new' %}"><i class="fas fa-comment-dollar mr-2"></i>Débito</a>
-                        <a class="dropdown-item" href="{% url 'recebimento_new' %}"><i class="fas fa-hand-holding-usd mr-2"></i>Crédito</a>
+                        <a class="dropdown-item" href="#"><i class="fas fa-comment-dollar mr-2"></i>Débito</a>
+                        <a class="dropdown-item" href="#"><i class="fas fa-hand-holding-usd mr-2"></i>Crédito</a>
                     </div>
                     </li>
                     <li class="nav-item dropdown ml-2">
@@ -51,14 +51,14 @@
                             <i class="fas fa-bars mr-1"></i> Configuração
                         </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="{% url 'conta_new' %}"><i class="fas fa-donate mr-2"></i>Contas</a>
-                        <a class="dropdown-item" href="{% url 'responsavel_new' %}"><i class="fas fa-id-card mr-2"></i>Responsáveis</a>
+                        <a class="dropdown-item" href="#"><i class="fas fa-donate mr-2"></i>Contas</a>
+                        <a class="dropdown-item" href="#"><i class="fas fa-id-card mr-2"></i>Responsáveis</a>
                     </div>
                     </li>
                 </ul>
             </div>
             {% if user.is_authenticated %}
-            <p class="desktop text-capitalize text-right mt-1"><i class="fas fa-user mr-1"></i> {{ user.username }}<a class="badge badge-secondary ml-1" href="{% url 'logout' %}">Sair</a></p>
+            <p class="desktop text-capitalize text-right mt-1"><i class="fas fa-user mr-1"></i> <a class="text-dark" href="{% url 'register' user.id %}">{{ user.username }}</a> <a class="badge badge-secondary ml-1" href="{% url 'logout' %}">Sair</a></p>
             {% else %}
             <a class="desktop btn btn-secondary ml-1" href="{% url 'login' %}">Login</a>
             {% endif %}

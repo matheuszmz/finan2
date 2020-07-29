@@ -35,3 +35,16 @@ th, td, span {
 .blue{
     color:blue;
 }
+
+span.help-block {
+    color: red;
+    font-size: 12px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a:hover {
+    text-decoration: none;
+}

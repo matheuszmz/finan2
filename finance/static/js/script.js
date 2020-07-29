@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $('#id_valor').mask('#.##0,00', {reverse: true});
+    $('#id_cellphone').mask('(00) 00000-0000')
 
     $(document).on('click', '.confirm-delete', function () {
         $("#confirmDeleteModal").attr("caller-id", $(this).attr("id"));

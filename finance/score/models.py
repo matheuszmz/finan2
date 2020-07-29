@@ -1,7 +1,5 @@
 from django.db import models
-from user.models import User
-
-from django.utils.translation import ugettext_lazy as _
+from userCustom.models import User
 
 
 class Account(models.Model):

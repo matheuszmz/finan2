@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% load bootstrap %}
 
-{% block title %}Principal{% endblock %}
+{% block title %}Home{% endblock %}
 
 {% block main %}
     {% if user.is_authenticated %}
-        <form>
+<!--form>
     <div class="row justify-content-end">
         <div class="col-sm-4">
             <div class="input-group mt-3">
@@ -74,7 +74,7 @@
             <th class="blue text-right">{{ saldo }}</th>
         {% endif %}
     </tr>
-    </tbody>
+    </tbody-->
 </table>
     {% else %}
         <div class="container justify-content-center">

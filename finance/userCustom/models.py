@@ -32,25 +32,22 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(_('username'), max_length=15, unique=True,
-                                help_text=_(
-                                    'Required. 15 characters or fewer. Letters, numbers and @/./+/-/_ characters'),
                                 validators=[validators.RegexValidator(re.compile('^[\w.@+-]+$'),
                                                                       _('Enter a valid username.'), _('invalid'))])
     name = models.CharField(_('name'), max_length=60)
     email = models.EmailField(_('email address'), max_length=255, unique=True)
-    birthday = models.DateField(_('birthday'))
-    cellphone = models.CharField(_('cellphone'), max_length=15,
-                                 help_text=_('Required. 11 numbers with DDD.'),
+    birthday = models.DateField(_('Data de Aniversário'))
+    cellphone = models.CharField(_('Celular'), max_length=15,
                                  validators=[validators.RegexValidator(re.compile('(\(\d{2}\)\s)(\d{5}\-\d{4})'),
                                                                        _('Enter a valid cellphone.'), _('invalid'))])
     is_staff = models.BooleanField(_('staff status'), default=False,
-                                   help_text=_('Designates whether the user can log into this admin site.'))
+                                   help_text=_('Designates whether the userCustom can log into this admin site.'))
     is_active = models.BooleanField(_('active'), default=True,
                                     help_text=_(
-                                        'Designates whether this user should be treated as active. Unselect this instead of deleting accounts.'))
+                                        'Designates whether this userCustom should be treated as active. Unselect this instead of deleting accounts.'))
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
     is_trusty = models.BooleanField(_('trusty'), default=False,
-                                    help_text=_('Designates whether this user has confirmed his account.'))
+                                    help_text=_('Designates whether this userCustom has confirmed his account.'))
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'name', 'birthday', 'cellphone']
     objects = UserManager()
